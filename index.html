@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Habitación de Música</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- FONDO -->
+    <main class="sala">
+
+        <!-- Oscurecimiento MUY ligero -->
+        <div class="overlay"></div>
+
+        <!-- BOTÓN PARA VOLVER -->
+        <a href="#" class="volver" onclick="history.back(); return false;">
+            ← volver
+        </a>
+
+        <!-- TÍTULO -->
+        <div class="titulo">
+            <span>音楽</span>
+            <h1>nuestra música</h1>
+            <p>canciones que quiero compartir contigo</p>
+        </div>
+
+
+        <!-- REPRODUCTOR -->
+        <section class="reproductor">
+
+            <div class="disco">
+                <div class="disco-centro"></div>
+            </div>
+
+            <div class="info-cancion">
+                <p class="pequeno">AHORA SONANDO</p>
+
+                <h2 id="tituloCancion">
+                    Selecciona una canción
+                </h2>
+
+                <p id="artistaCancion">
+                    nuestra pequeña colección
+                </p>
+            </div>
+
+
+            <!-- BARRA DE PROGRESO -->
+            <div class="progreso-contenedor">
+                <span id="tiempoActual">0:00</span>
+
+                <input
+                    type="range"
+                    id="barraProgreso"
+                    value="0"
+                    min="0"
+                    max="100"
+                >
+
+                <span id="duracion">0:00</span>
+            </div>
+
+
+            <!-- CONTROLES -->
+            <div class="controles">
+
+                <button id="anterior" title="Anterior">
+                    ↶
+                </button>
+
+                <button id="play" class="play">
+                    ▶
+                </button>
+
+                <button id="siguiente" title="Siguiente">
+                    ↷
+                </button>
+
+            </div>
+
+
+            <!-- VOLUMEN -->
+            <div class="volumen">
+                <span>♩</span>
+
+                <input
+                    type="range"
+                    id="volumen"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.8"
+                >
+
+                <span>♪</span>
+            </div>
+
+        </section>
+
+
+        <!-- LISTA DE CANCIONES -->
+        <section class="lista">
+
+            <div class="lista-titulo">
+                <span>playlist</span>
+                <span id="cantidadCanciones">0 canciones</span>
+            </div>
+
+            <div id="canciones"></div>
+
+        </section>
+
+
+        <!-- FRASE -->
+        <div class="frase">
+            <span>「</span>
+            <p>
+                algunas canciones simplemente<br>
+                encuentran su camino hacia alguien
+            </p>
+            <span>」</span>
+        </div>
+
+
+        <!-- AUDIO REAL -->
+        <audio id="audio"></audio>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
